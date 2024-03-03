@@ -26,7 +26,7 @@
 </head>
 
 <body class="skin-1">
-  <div id="navbar" class="navbar navbar-default          ace-save-state">
+  <div id="navbar" class="navbar navbar-default ace-save-state">
     <div class="navbar-container ace-save-state" id="navbar-container">
       <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
         <span class="sr-only">Toggle sidebar</span>
@@ -116,7 +116,7 @@
             <span class="menu-text"> Master Data </span>
           </a>
           <li class="">
-            <a href="/assetkat">
+            <a href="{{ route('admin.asset-inventory.index') }}">
               <i class="menu-icon fa fa-caret-right"></i>
               Asset Inventory
             </a>
@@ -179,7 +179,7 @@
             <li class="">
               <a href="#" class="dropdown-toggle">
                 <i class="menu-icon fa fa-caret-right"></i>
-                Asset Outging
+                Asset Outgoing
                 <b class="arrow fa fa-angle-down"></b>
               </a>
 

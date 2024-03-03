@@ -2,8 +2,12 @@
 
 @section('content')
 <div class="row">
-    <div class="col-md-12">
+    <div class="col-md-2">
         <a class="btn btn-primary btn-sm" href="{{ route('admin.asset-inventory.create') }}"><i class="fa fa-plus"></i>  Add New Item</a>
+    </div>
+    <div class="col-md-9"></div>
+    <div class="col-md-1">
+        <a class="btn btn-success btn-sm" href="{{ route('admin.asset-inventory.create') }}"><i class="fa fa-print"></i>  Print</a>
     </div>
 </div>
 <br>
@@ -17,7 +21,7 @@
                     <table id="dynamic-table" class="table table-striped table-bordered table-hover">
                    <thead>
                    <tr>
-                            <th>ID</th>
+                            <th style="width:120px;">Qr Code</th>
                             <th>Description</th>
                             <th style="width:250px;">Action</th>
                     </tr>
@@ -25,10 +29,10 @@
                    <tbody>
                         @foreach ($assets as $asset)
                             <tr>
-                                <td>{{$asset->id}}</td>
+                                <td>{!! QrCode::size(100)->generate($asset->assetDescription.','.$asset->assetQty.' '.$asset->assetUnit.' Status: '.$asset->assetStatus.' Remarks: '.$asset->assetRemarks) !!}</td>
                                 <td>{{$asset->assetDescription}}</td>
                                 <td>
-                                    <a href="" class="btn btn-success btn-sm">
+                                    <a href="/admin/asset-inventory/{{$asset->id}}" class="btn btn-success btn-sm">
                                     <i class="fa fa-eye"></i>
                                     View
                                     </a>

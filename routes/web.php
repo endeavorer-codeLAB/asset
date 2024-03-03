@@ -23,3 +23,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/admin', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin.index');
 Route::get('/admin/asset-inventory', [App\Http\Controllers\Admin\AssetInventory\AssetInventoryController::class, 'index'])->name('admin.asset-inventory.index');
 Route::get('/admin/asset-inventory/create', [App\Http\Controllers\Admin\AssetInventory\AssetInventoryController::class, 'create'])->name('admin.asset-inventory.create');
+Route::post('/admin/asset-inventory/create', [App\Http\Controllers\Admin\AssetInventory\AssetInventoryController::class, 'store'])->name('admin.asset-inventory.store');
+Route::get('/admin/asset-inventory/{id}', [App\Http\Controllers\Admin\AssetInventory\AssetInventoryController::class, 'show'])->name('admin.asset-inventory.show');
