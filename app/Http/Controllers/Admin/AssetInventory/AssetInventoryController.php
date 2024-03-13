@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\AssetInventory;
 use App\Http\Requests\AssetInventoryRequest;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 class AssetInventoryController extends Controller
 {
@@ -38,4 +39,13 @@ class AssetInventoryController extends Controller
         $assetItem = AssetInventory::find($id);
         return view('admin.asset-inventory.show',compact('assetItem'));
     }
+
+
+   public function export_asset_pdf(){
+    $assets = AssetInventory::all();
+    $pdf = Pdf::loadView('pdf.asset',compact('assets'));
+    return $pdf->download('asset.pdf');
+
+   }
+
 }

@@ -25,3 +25,4 @@ Route::get('/admin/asset-inventory', [App\Http\Controllers\Admin\AssetInventory\
 Route::get('/admin/asset-inventory/create', [App\Http\Controllers\Admin\AssetInventory\AssetInventoryController::class, 'create'])->name('admin.asset-inventory.create');
 Route::post('/admin/asset-inventory/create', [App\Http\Controllers\Admin\AssetInventory\AssetInventoryController::class, 'store'])->name('admin.asset-inventory.store');
 Route::get('/admin/asset-inventory/{id}', [App\Http\Controllers\Admin\AssetInventory\AssetInventoryController::class, 'show'])->name('admin.asset-inventory.show');
+Route::get('/pdf', [App\Http\Controllers\Admin\AssetInventory\AssetInventoryController::class, 'export_asset_pdf'])->name('pdf.asset');
