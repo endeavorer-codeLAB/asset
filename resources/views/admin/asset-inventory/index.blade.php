@@ -8,7 +8,7 @@
     </div>
     <div class="col-md-9"></div>
     <div class="col-md-1">
-        <a class="btn btn-success btn-sm" href="" onClick="exportToExcel('myTable');"><i class="fa fa-print"></i>  Print</a>
+        <a class="btn btn-success btn-sm" href="{{ route('pdf.asset') }}" ><i class="fa fa-print"></i>  Print</a>
     </div>
 </div>
 <br>
