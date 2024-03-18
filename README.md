@@ -1,7 +1,7 @@
 Here are the steps on how run/deploy this application to your PC
 
 Step #1 - Clone the project to your local development environment.
-git clone https://github.com/endeavorer-codeLAB/asset.git
+https://github.com/lewis-Hope/asset.git
 
 Step #2 - Update Dependencies
 composer install
