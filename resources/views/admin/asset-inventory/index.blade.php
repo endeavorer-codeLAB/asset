@@ -11,13 +11,29 @@
         <a class="btn btn-success btn-sm" href="{{ route('pdf.asset') }}" ><i class="fa fa-print"></i>  Print</a>
     </div>
 </div>
+<div class="row" style="margin-top:10px;">
+    <div class="col-md-4">
+    <x-asset.asset-search />
+    </div>
+    <div class="col-md-8">
+
+    </div>
+</div>
 <br>
 <div class="row">
     <div class="col-md-12">
 
                 <div class="panel panel-default">
               
-                <div class="panel-heading"><strong>Asset Inventory List</strong></div>
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <strong>Asset List</strong>
+                        </div>
+                        <div class="col-md-8">
+                        </div>
+                    </div>
+                    </div>
                 <div class="panel-body">
                     <table class="table table-striped table-bordered table-hover">
                    <thead>

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\AssetInventory;
 use App\Http\Requests\AssetInventoryRequest;
 use Barryvdh\DomPDF\Facade\Pdf;
+use Illuminate\Database\Eloquent\Builder;
 
 class AssetInventoryController extends Controller
 {
@@ -45,6 +46,19 @@ class AssetInventoryController extends Controller
     $assets = AssetInventory::all();
     $pdf = Pdf::loadView('pdf.asset',compact('assets'));
     return $pdf->download('asset.pdf');
+
+   }
+
+   public function search(Request $request) {
+
+    $search = $request->search;
+
+    $assets = AssetInventory::where(function($query) use ($search) {
+
+        $query->where('assetDescription','like',"%$search%");
+    })->get();
+
+    return view('admin.asset-inventory.index',compact('assets','search'));
 
    }
 

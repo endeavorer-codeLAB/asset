@@ -3,7 +3,7 @@
 @section('content')
 <div class="row">
     <div class="col-md-12">
-        <a class="btn btn-warning btn-sm" href="{{ route('admin.asset-inventory.index') }}"><i class="menu-icon fa fa-caret-left"></i> Back to List</a>
+        <a class="btn btn-warning btn-sm" href="/admin/asset-inventory"><i class="menu-icon fa fa-caret-left"></i> Back to List</a>
     </div>
 </div>
 <br />
